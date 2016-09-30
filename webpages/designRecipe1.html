@@ -1,0 +1,587 @@
+
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+  
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0;
+      U) [Netscape]"><title>Introduction to Programming and Problem-solving  The Design Recipe</title></head><body style="background-color: rgb(255, 255, 255);" alink="#545454" link="#00009c" vlink="#545454">
+&nbsp; <br>
+
+<center>
+<table border="0" width="88%">
+  <tbody>
+    <tr>
+      <td style="width: 252px;" valign="top"><img style="border: 0px solid ; width: 231px; height: 68px;" src="designRecipe1_files/PSU.jpg" alt=""></td>
+      <td style="width: 60px;" valign="top">&nbsp;</td>
+      <td style="width: 917px;" valign="top">
+      <h1><a name="Introduction_to_Programming_and"></a>Introduction to
+Programming and Problem-solving</h1>
+      <h2>CS 161 (Fall 2013)</h2>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;" valign="top"><br>
+      </td>
+      <td style="width: 60px;"><br>
+      </td>
+      <td style="width: 917px;" bgcolor="#f0ff25"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;" valign="top">
+      <h2><a href="#The_Design_Recipe"><small>The Design Recipe</small></a></h2>
+      <table style="width: 90%; background-color: rgb(204, 255, 221);" border="0" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td valign="top">
+            <ol>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_down_a_purpose_statement">Write
+down a purpose statement</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_down_a_header" target="_top">Write down a header</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_some_examples">Write
+some examples</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Take_inventory">Take
+inventory</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_the_code">Write
+the code</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Test_the_code">Test
+the code</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Clean_up">Clean
+up</a></li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      </td>
+      <td style="width: 60px;" valign="top">
+      <blockquote> <br>
+      </blockquote>
+      <br>
+      </td>
+      <td style="width: 917px;" valign="top">
+      <h2><a name="The_Design_Recipe"></a>The Design Recipe<br>
+      </h2>
+The design recipe is a step-by-step process that will help you design
+and organize your programs.&nbsp;&nbsp; The idea of a design recipe was
+introduced by Felleissen <span style="font-style: italic;">et al. </span>in
+their book <span style="font-style: italic;">How to Design Programs</span>.&nbsp;&nbsp;
+For students who don't like to be stuck looking at a blank screen, the
+design recipe tells you how to get started.&nbsp; If you are uncertain
+how to express something in Grace, the design recipe will help by
+separating <span style="font-style: italic;">what</span> you want to
+express from the <span style="font-style: italic;">how</span> of doing
+it in Grace.<br>
+      <br>
+Many experienced designers use a process very much like the design
+recipe for designing programs that do important real-world jobs, like
+keeping tracking your bank balance, or compressing music into
+MP3.&nbsp; Still, we won't pretend that this recipe captures the <span style="font-style: italic;">only </span>way of designing a program:
+there are as many ways of designing programs as there are of ... well,
+of cooking eggs!&nbsp; Nevertheless, in this course we will frequently <span style="font-style: italic;">require</span> you to follow the design
+recipe, because this will help your instructors to see what you
+understand and what you are having trouble with.<br>
+      <br>
+For the present, we will be expecting that your programs will be
+collections of Grace methods, and the design recipe therefore
+assumes that you will start by designing one or more methods.<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="1">
+              <li> <a name="Write_down_a_purpose_statement"></a>Write
+down a purpose statement for the method that you are developing.</li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+A <span style="font-style: italic;">purpose statement</span> is a
+Grace comment 
+that summarizes the purpose of the method in a single line.&nbsp; It
+should be a short but precise answer to the question “what does this
+method compute?” &nbsp;&nbsp; It should tell someone reading your
+program what the method does without them having to read the
+code.&nbsp; Here is an example purpose statement:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+&nbsp;&nbsp;&nbsp; //Return the Fahrenheit equivalent of a number
+representing a temperature in degrees Celsius.<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+&nbsp; <br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="2">
+              <li> <a name="Write_down_a_header"></a>Write down a
+header for the method.</li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+The header tells Grace that you are defining a method, gives the
+method a name, says how many parameters the method will have, and
+gives them names too.&nbsp; For example:<br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+method celsiusToFahrenheit(cTemperature) {<br>
+&nbsp;&nbsp;&nbsp; //Return the Fahrenheit equivalent of cTemperature,
+a number in degrees Celsius.<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Notice that now we have given the parameter a name, we can make the
+purpose statement more precise by referring to that name.&nbsp; This
+becomes even more helpful when there are multiple parameters.&nbsp; For
+example:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+method square(size, color) {<br>
+&nbsp;&nbsp;&nbsp; //Draw a square with sides of length size, filled
+with color.<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+&nbsp;<br>
+Notice also that the way this is written makes it legal Grace: the
+header starts with method, followed by the name of the method being
+defined, followed by the list of parameters (or no
+parenthesis if there are no parameters).&nbsp; The first line ends with
+a brace, and the comment <span style="font-style: italic;">must</span>
+be indented and be on the <span style="font-style: italic;">very next
+line</span>. <br>
+      <br>
+You can run your Grace method at this point, and it's useful to do
+so, because Grace will tell you if you have formatted something
+incorrectly.&nbsp; Of course, your method won't yet do what you have
+said it will do in the purpose statement, because you have not yet
+written any code.&nbsp; (Try it! What does your method do? What value
+does it return?)<br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="3">
+              <li><a name="Write_some_examples"></a>Write some examples
+illustrating how your method might be used, and what the result
+should be if there is a result.&nbsp; Put these examples in the comment too.<br>
+              </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Notice that for the method <small><span style="font-family: Monaco;">celsiusToFahrenheit</span></small>
+we can write down what we expect the method to return, because it is
+a comment that returns a value.<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">celsiusToFahrenheit(0) should be 32.0<br>
+celsiusToFahrenheit(100) should be 212.0<br>
+celsiusToFahrenheit(-40) should be -40.0<br>
+</span></small><small><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"></span></small><small><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+In contrast, <small><span style="font-family: Monaco;">square</span></small>
+is a method that
+has an effect, so we instead describe what the effect should be.<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"><br>
+            </span></small><small><span style="font-family: Monaco;">
+square(12, red)<br>
+<br>
+// draws a red square with sides 12 pixels long. <br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+In contrast, <small><span style="font-family: Monaco;">square</span></small>
+is a method that
+has an effect, but returns no result.&nbsp; We still write an example
+method call, but this time we expect
+no result.&nbsp;&nbsp; To clarify our explectations, we write a comment
+describing what the effect should be.<br>
+      <br>
+At this point you may well realize that you have been sloppy when you
+wrote your purpose statement, and have left out important
+details.&nbsp; For example, the purpose statement didn't say that in
+the method <small><span style="font-family: Monaco;">square</span></small>,&nbsp;
+      how <small><span style="font-family: Monaco;">color</span></small>
+would be represented.
+&nbsp;&nbsp; It's a
+fine idea to go back and change your purpose statement.&nbsp;&nbsp; If
+everything won't fit on one line, it's OK to add lines with additional
+detail. Nevertheless, the first line should still stand alone as a
+brief summary of the method's purpose. <br>
+      <br>
+You may also find that the name that you chose doesn't look so good
+when you see it being <span style="font-style: italic;">used</span>,
+in a method call.&nbsp;&nbsp; If so, go back and change the name.<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="4">
+              <li> <a name="Take_inventory"></a>Take inventory: stop
+and think about what you know (the parameters), what the method has
+to do, and what existing Grace code you can call on to help you.&nbsp;
+                <br>
+                <br>
+              </li>
+              <li><a name="Write_the_code"></a>Write the code to
+implement the method!<br>
+                <br>
+              </li>
+              <li> <a name="Test_the_code"></a>Test the code that you
+wrote.</li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+We have put all three of these steps in the same box because sometimes
+it will be obvious how to write the code once you have taken inventory,
+and sometimes it will be far from obvious.&nbsp; Let's work through our
+two running examples.
+      <p>Suppose that you are developing <small><span style="font-family: Monaco;">celsiusToFahrenheit</span></small>.
+Inside the method, you know the value of the parameter, <small><span style="font-family: Monaco;">cTemperature</span></small>. You also
+know that 0°C is 32°F and that the Fahrenheit degree is 5/9 of the size
+of the Celsius degree. So, after a moment's thought, you might realize
+that <br>
+      </p>
+      <div style="margin-left: 40px;"><span style="font-family: Monaco;"><small>(cTemperature * 9 / 5) + 32</small></span></div>
+      <p><code></code></p>
+      <p>expresses the Fahrenheit temperature, and quickly move to
+completing the method definition:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+method celsiusToFahrenheit(cTemperature) {<br>
+&nbsp;&nbsp;&nbsp; //Return the Fahrenheit equivalent of cTemperature,
+a number in degrees Celsius.<br>
+            <br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//celsiusToFahrenheit(0) should be 32.0<br>
+&nbsp;&nbsp;&nbsp; //celsiusToFahrenheit(100) should be 212.0<br>
+&nbsp;&nbsp;&nbsp; //celsiusToFahrenheit(-40) should be -40.0<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; return (cTemperature * 9 / 5) + 32<br>
+            <br>
+            </span></small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Then you test your method on the examples that you wrote in Step 3,
+and you find that it works for all of them.<br>
+      </p>
+      <p>Our other program example isn't so easy. &nbsp; What do you
+know about drawing squares?&nbsp; Inside the square method, you know
+the three parameters &mdash; <small><span style="font-family: Monaco;">size</span>,</small>
+      <small><span style="font-family: Monaco;">origin</span></small>
+and <small><span style="font-family: Monaco;">color</span>.</small>
+&nbsp; You also know
+that the turtle library can help you make drawings, but you don't
+remember the details of what's in that library.&nbsp; In such a case,
+it can be helpful to write down in English a series of steps that you
+think might help bring you closer to a solution.&nbsp; In this case, I
+might write, with pencil and paper<br>
+      </p>
+      <ol start="0">
+        <li>import the logo dialect<br>
+        </li>
+        <li>head forward size pixels</li>
+        <li>head right size pixels</li>
+        <li>head backward size pixels</li>
+        <li>head left size pixels</li>
+      </ol>
+It's quite important that I don't try to make this pencil and paper
+sketch perfect before I try it out in Grace.&nbsp; There are just too
+many details to get right for me to strive for perfection without the
+help of the computer.&nbsp; People are good at conceptualizing and
+inventing, but not so good at tracking mind-numbing details; computers
+cannot conceptualize at all, but are really good at tracking those
+details.&nbsp; Take advantage of this by making the computer work with
+you.&nbsp; <br>
+      <br>
+So let me use the computer to help turn this plan into working
+code.&nbsp;&nbsp; First, I put the above list of steps into the body of
+my Grace method as comments:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+method square(size, color) {<br>
+&nbsp;&nbsp;&nbsp; //Draw a red square with sides of length size.<br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; // square(12, red)<br>
+&nbsp;&nbsp;&nbsp; // draws a red square with sides 12 pixels long. <br>
+            </span><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"><br>
+&nbsp;&nbsp;&nbsp; //import logo<br>
+&nbsp;&nbsp;&nbsp; //&nbsp; head east size pixels<br>
+&nbsp;&nbsp;&nbsp; //&nbsp; head south size pixels<br>
+&nbsp;&nbsp;&nbsp; //&nbsp; head west size pixels<br>
+&nbsp;&nbsp;&nbsp; //&nbsp; head north size pixels<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Notice that I can still run my method, although it still won't do
+anything!&nbsp; Next, I take a look at the Grace Turtle graphics
+documentation, and I see that these steps are quite similar to the
+kinds of thing that a turtle can do. So I take a stab at writing some
+Grace to do them:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+dialect "logo"<br><br>
+method square(size, color) {</span></small><small><span style="font-family: Monaco;"><br>
+&nbsp;&nbsp;&nbsp; // Draw a red square with sides of length size. <br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; // square(12, red)<br>
+&nbsp;&nbsp;&nbsp; // draws a red square with sides 12 pixels long. <br>
+            </span><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"></span></small><br>
+            <small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; foward(size) &nbsp; //&nbsp; head forward size
+pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; //&nbsp; head right
+size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head backwards size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head left size pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)<br>
+}
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+I run this Grace code, and ... nothing happens!&nbsp; More precisely,
+nothing <span style="font-style: italic;">appears</span> to
+happen.&nbsp; In fact, Grace has accepted a new definition for the
+method square, but that's all.&nbsp; We have to try it out to see if
+we are close to what we wanted.<br>
+      <br>
+So we go back to our example from Step 3, which is safely stored in the
+docstring, and try:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+square(12, red)<br>
+Syntax error: no method foward(_) <br>
+&nbsp;&nbsp;&nbsp; in "test" (line 7, column 5) <br>
+            <br>
+            </span></small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+This may not look promissing, but it's actually really helpful! Grace
+is telling us that there is no “foward” in the turtle module, and if I
+look carefully at line 12, I see that I've mis-spelled “forward” as
+“foward”.&nbsp;&nbsp; This is pretty easy to fix; next time, when I run
+the code, I get the complaint “NameError: global name 'tutle' is not
+defined”, which is quite true!&nbsp; I correct “tutle” to “turtle”, and
+on the next run, I get no complaints from Grace, which draws a picture
+like
+this:<br>
+      <br>
+      <img style="border: 1px solid ; width: 246px; height: 157px;" alt="" src="designRecipe1_files/turtle1.png"><br>
+      <br>
+      
+Everything looks good except for the color.&nbsp; Turning to the
+documentation, I see that I need to set the <small><span style="font-family: Monaco;">penColor</span></small>, if I'm going to
+fulfill the purpose statement that I wrote in step 2.<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+dialect "logo"<br>
+method square(size, color) {<br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+//Draw a square with sides of length size, outlined
+with color.<br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+// square(12, red)<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; // draws a red square with sides 12 pixels long, <br>
+            </span><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"></span></small><br>
+            <small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span style="color: rgb(0, 127, 0);">
+penColor := color</span><br style="color: rgb(0, 127, 0);">
+            <span style="color: rgb(0, 127, 0);">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; forward(size) &nbsp; //&nbsp; head forward size
+pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; //&nbsp; head right
+size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head backward size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head north size pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Now I get the image that I specified in the purpose statement:<br>
+      <img style="border: 1px solid ; width: 202px; height: 127px;" alt="" src="designRecipe1_files/turtle4.png"><br>
+      <br>
+To summarize steps 4, 5 and 6: taking inventory and writing your code
+may happen in sequence if the method is very simple, but most likely
+alternate with testing.&nbsp;&nbsp; When your tests treveal a problem,
+look at the resoures that you have available to help you solve
+it.&nbsp;&nbsp; When all of your tests pass, wriote some more
+tests.&nbsp;&nbsp; Try and break your code!<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="7">
+              <li> <a name="Clean_up"></a> Clean up the code </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+The final step in the design recipe is to take a look at your code and
+clean it up.&nbsp;&nbsp; Did you choose good names for the
+parameters?&nbsp; Are those comments useful?&nbsp;&nbsp; In the square
+example, some of the comments just repeat what the Grace already says;
+that's useless verbiage.&nbsp;&nbsp; Others add higher level
+information, such as the heading of the turtle, that may be quite
+useful when we (or someone else) looks at this code some time in the
+future.&nbsp; <br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+dialect "logo"<br>
+method square(size, color) {<br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+// Draw a square with sides of length size, outlined
+with color.<br>
+            </span></small><small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+// square(12, red)<br>
+&nbsp;&nbsp;&nbsp; // draws a red square with sides 12 pixels long, <br>
+            </span><span style="font-family: Monaco;"></span></small><small><span style="font-family: Monaco;"></span></small><br>
+            <small><span style="font-family: Monaco;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; penColor := color<br>
+&nbsp;&nbsp;&nbsp; forward(size) &nbsp; ##&nbsp; head forward size
+pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; //&nbsp; head right
+size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head backward size pixels<br>
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">turnRight(90)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+&nbsp;&nbsp;&nbsp; forward(size)&nbsp;&nbsp; </span></small><small><span style="font-family: Monaco;">//&nbsp; head left size pixels<br>
+&nbsp;&nbsp;&nbsp; turnRight(90)<br>
+            </span><span style="font-family: Monaco;"></span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+After every change to the code, test it again.&nbsp;&nbsp; That's the
+only way to be confident that you didn't accidentally mess up.<br>
+      <br>
+<!-- **************************************************** end--> </td>
+      <td valign="top"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;">&nbsp;</td>
+      <td style="width: 60px;"><br>
+      </td>
+      <td style="width: 917px;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<br>
+
+<hr><font face="Helvetica, Geneva, Arial, SunSans-Regular,
+      sans-serif" size="-1">Most recently modified by Andrew P. Black at <csobj format="ShortTime" h="13" region="2" t="DateTime" w="31">1<font size="-1">0:52</font></csobj> on Tuesday<csobj format="LongDate" h="13" region="108" t="DateTime" w="110"> 1 October 2013</csobj></font><br>
+
+<hr width="100%">
+</body></html>
