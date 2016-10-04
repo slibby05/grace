@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+  
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+  <title>Introduction to Programming and Problem-solving &mdash; The Design Recipe</title>
+
+<style>
+pre  {font-family: Monaco}
+</style>
+  
+</head><body style="background-color: rgb(255, 255, 255);" alink="#545454" link="#00009c" vlink="#545454"> &nbsp; <br>
+
+<center>
+<table border="0" width="88%">
+  <tbody>
+    <tr>
+      <td style="width: 252px;" valign="top"><img style="border: 0px solid ; width: 231px; height: 68px;" src="designRecipe2_files/PSU.jpg" alt=""></td>
+      <td style="width: 60px;" valign="top">&nbsp;</td>
+      <td style="width: 917px;" valign="top">
+      <h1><a name="Introduction_to_Programming_and"></a>
+       Introduction to Programming and Problem-solving</h1>
+      <h2>CS 161 (Fall 2016)</h2>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;" valign="top"><br>
+      </td>
+      <td style="width: 60px;"><br>
+      </td>
+      <td style="width: 917px;" bgcolor="#f0ff25"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;" valign="top">
+      <h2><a href="#The_Design_Recipe"><small>The Design Recipe</small></a></h2>
+      <table style="width: 90%; background-color: rgb(204, 255, 221);" border="0" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td valign="top">
+            <ol>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_down_a_purpose_statement">Write
+down a purpose statement</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_down_a_header" target="_top">Write down a header</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_some_examples">Write
+some examples</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Take_inventory">Take
+inventory</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Write_the_code">Write
+the code</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Test_the_code">Test
+the code</a></li>
+              <li> <a href="file:///Users/black/PSU/Classes/Intro%20to%20CS/Web%20Pages/designRecipe1.html#Clean_up">Clean
+up</a></li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      </td>
+      <td style="width: 60px;" valign="top">
+      <blockquote> <br>
+      </blockquote>
+      <br>
+      </td>
+      <td style="width: 917px;" valign="top">
+      <h2><a name="The_Design_Recipe"></a>The Design Recipe &mdash; with automated Testing<br>
+      </h2>
+One of the best features of the design recipe is that it supports
+automated testing.&nbsp; If you have been following the prescription
+for designing your Grace methods that we laid down in the 
+<a href="http://web.cecs.pdx.edu/%7Eblack/IntroToCS/designRecipe1.html">first iteration of the design recipe</a>,
+you will have been writing examples of method calls and their result
+in your comments.&nbsp; However, testing your methods has meant
+running your Grace program, and
+then checking manually that the printout in the shell is the same as in
+your comments.<br>
+      <br>
+This is repetitive, boring and error-prone.&nbsp; It's probably so
+boring that you didn't bother to do it <span style="font-style: italic;">every time </span>you made a change to
+your code.&nbsp; Which may cause you to turn in methods with
+comments that don't actually tell the reader what the method does.<br>
+      <br>
+Tasks that are repetitive, boring and error-prone are ideal candidates
+for automation &mdash; in other words, they are things that we should ask the
+computer to do for us.&nbsp; That's exactly what the <span style="font-style: italic;">minitest</span> testing framework for
+Grace does: it automates the process of checking that the tests you write 
+actually work the way that you say they do.<br>
+      <br>
+Recall that we expect your programs to be
+collections of Grace methods, and that you have been following the
+design recipe in writing them.&nbsp; The major steps in the design
+recipe are in the box in the left sidebar.<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="1">
+              <li> <a name="Write_down_a_purpose_statement"></a>
+                Write down a purpose statement for the method that you are developing.
+              </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+
+A <span style="font-style: italic;">purpose statement</span> is a
+Grace comment
+that summarizes the purpose of the method in a single line.&nbsp; It
+should be a short but precise answer to the question "what does this
+method compute?"&nbsp;&nbsp; It should tell someone reading your
+program what the method does without them having to read the
+code.&nbsp; Here is an example purpose statement:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+&nbsp;&nbsp;&nbsp; // Return the Fahrenheit equivalent of a number representing a temperature in degrees Celsius.<br>
+            </span><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+&nbsp; <br>
+It should be a phrase ending with a period, and should be written as a
+command, rather than as a description (so we say "Return the ..."
+rather than "Returns the")..<br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="2">
+              <li> 
+                <a name="Write_down_a_header"></a>Write down a header for the method.
+              </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+The header tells Grace that you are defining a method, gives the
+method a name, says (implicitly) how many parameters the method
+will have, and gives the parameters names too.&nbsp; For example:<br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><span style="font-family: Monaco;"> <small>
+<pre>
+method celsiusToFahrenheit(cTemperature) {
+    //Return the Fahrenheit equivalent of cTemperature, a number in degrees Celsius.
+}
+</pre>
+            </small></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="3">
+              <li>
+              <a name="Write_some_examples"></a>Write some examples
+illustrating how your method might be used, and what the result
+should be if there is a result.&nbsp; Put these examples in the
+docstring too.<br>
+              </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Notice that for the method <small><span style="font-family: Monaco;">celsiusToFahrenheit</span></small>
+we can easily write down what we expect the method to return, because
+it is a method that returns a value.<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;" return="" the="" fahrenheit="" equivalent="" of="" ctemperature,="" a="" number="" in="" degrees="" celsius.="">
+<pre>            
+method celsiusToFahrenheit(cTemperature) {
+    // Return the Fahrenheit equivalent of cTemperature, a number in degrees Celsius.
+
+    // Examples:
+    // celsiusToFahrenheit(0) should be 32.0
+    // celsiusToFahrenheit(100) should be 212.0
+    // celsiusToFahrenheit(-40) should be -40.0
+}
+</pre>
+</span></small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+<br>
+At this point you may well realize that you have been sloppy when you
+wrote your purpose statement, and have left out important
+details.&nbsp; You may also find that the name that you chose doesn't
+look so good
+when you see it being <span style="font-style: italic;">used</span>,
+in a method call.&nbsp;&nbsp; If so, go back and change the name.<br>
+      <br>
+      <h3>Writing tests</h3>
+      <br>
+
+To write tests for this method we use the <span style="font-style: italic;">minitest</span> dialect.
+A test in minitest is just an example from the comments.
+Each example becomes an assert statement.
+We can even group the tests into a testSuite.
+The following testSuite tests our examples in the comments.
+
+
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;" return="" the="" fahrenheit="" equivalent="" of="" ctemperature,="" a="" number="" in="" degrees="" celsius.="">
+<pre>
+dialect "minitest"
+testSuite {
+    test "celsiusToFarenheit(0)" by {
+        assert (celsiusToFahrenheit 0) shouldBe 32.0
+    }
+    test "celsiusToFarenheit(100)" by {
+        assert (celsiusToFahrenheit 100) shouldBe 212.0
+    }
+    test "celsiusToFarenheit(-40)" by {
+        assert (celsiusToFahrenheit (-40)) shouldBe (-40.0)
+    }
+}
+</pre>
+</span></small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+
+      <br>
+      <h3>Running doctest from the Command Line</h3>
+      <br>
+Now you can run those examples by clicking the run button.
+Naturally, the tests should fail, since you haven't actually written
+any code yet.&nbsp; You should see some output like this:<br>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">
+<pre>
+1 run, 0 failed, 1 error
+Errors:
+    celsiusToHarenheit: TypeError: argument 1 in assert (arg list 1), which corresponds to parameter s1, does not have type Object.
+</pre>
+            </span></small></td>
+          </tr>
+        </tbody>
+      </table>
+&nbsp;<br>
+
+Here minitest is telling you that the method returned nothing, but it
+expected a certain number.<br>
+So now you are in a position to proceed with the next three steps of
+the design recipe:<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="4">
+              <li> <a name="Take_inventory"></a>Take inventory: stop
+and think about what you know (the parameters), what the method has
+to do, and what existing Grace code you can call on to help you.&nbsp;
+                <br>
+                <br>
+              </li>
+              <li><a name="Write_the_code"></a>Write the code to
+implement the method!<br>
+                <br>
+              </li>
+              <li> <a name="Test_the_code"></a>Test the code that you
+have written.</li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+Remember, all three of these steps are in the same box because
+sometimes
+it will be obvious how to write the code once you have taken inventory,
+and sometimes it will be far from obvious.&nbsp; Inside<small><span style="font-family: Monaco;"> celsiusToFahrenheit</span></small>, you
+know the value of the parameter, <small><span style="font-family: Monaco;">cTemperature</span></small>. You also
+know that 0°C is 32°F and that the Fahrenheit degree is 5/9 of the size
+of the Celsius degree. So, after a moment's thought, you might realize
+that <br>
+      <br>
+      <div style="margin-left: 40px;"><span style="font-family: Monaco;"><small>(cTemperature
+* 5 / 9) + 32</small></span></div>
+      
+      <p>expresses the Fahrenheit temperature, and quickly move to
+completing the method definition:<br>
+      <br>
+      </p>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">
+<pre>
+dialect "minitest"
+
+methoddef celsiusToFahrenheit(cTemperature) {
+    //Return the Fahrenheit equivalent of cTemperature, a number in degrees Celsius.
+
+    //celsiusToFahrenheit(0) should be 32.0
+    //celsiusToFahrenheit(100) should be 212.0
+    //celsiusToFahrenheit(-40) should be -40.0
+    return (cTemperature * 5 / 9) + 32
+}
+
+testSuite {
+    test "celsiusToFarenheit(0)" by {
+        assert (celsiusToFahrenheit 0) shouldBe 32.0
+    }
+    test "celsiusToFarenheit(100)" by {
+        assert (celsiusToFahrenheit 100) shouldBe 212.0
+    }
+    test "celsiusToFarenheit(-40)" by {
+        assert (celsiusToFahrenheit (-40)) shouldBe (-40.0)
+    }
+}
+</pre>
+            </span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br>
+Then you test your method and get:</p>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">
+<pre>
+3 run, 2 failed, 0 errors
+Failures:
+    celsiusToFarenheit(-40): &lsaquo;9.777777777777779&rsaquo; should be &lsaquo;-40&rsaquo;
+    celsiusToFarenheit(100): &lsaquo;87.55555555555556&rsaquo; should be &lsaquo;212&rsaquo;
+</pre>
+            </span></small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br>
+      </p>
+      <p>Notice that <span style="font-style: italic;">minitest</span>
+tells you about the failures but not the
+successes; the first test passed, but <span style="font-style: italic;">minitest</span>
+was silent.&nbsp;&nbsp;
+Can you see the cause of the failures?&nbsp; Often, the output from a
+failing test
+will be sufficient to pinpoint your bug; sometimes, you will need to
+put in <small><span style="font-family: Monaco;">print</span></small>
+statements.&nbsp; In this case, it's not too hard; the
+Celsius degree is larger than the Fahrenheit degree, so we need more
+Fahrenheit than we had Celsius; the correct conversion factor is 9/5,
+not 5/9.&nbsp;&nbsp; This also explains why our method worked for 0
+Celsius.</p>
+      <p>Here is the improved version:<br>
+      </p>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">
+<pre>
+dialect "minitest"
+
+method celsiusToFahrenheit(cTemperature) {
+    //Return the Fahrenheit equivalent of cTemperature, a number in degrees Celsius.
+    // Examples:<br>
+    // celsiusToFahrenheit(0) should be 32.0
+    // celsiusToFahrenheit(100) should be 212.0
+    // celsiusToFahrenheit(-40) should be -40.0
+    return (cTemperature * 9/5) + 32
+}
+
+testSuite {
+    test "celsiusToFarenheit(0)" by {
+        assert (celsiusToFahrenheit 0) shouldBe 32.0
+    }
+    test "celsiusToFarenheit(100)" by {
+        assert (celsiusToFahrenheit 100) shouldBe 212.0
+    }
+    test "celsiusToFarenheit(-40)" by {
+        assert (celsiusToFahrenheit (-40)) shouldBe (-40.0)
+    }
+}
+</pre>
+            </span></small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br>
+      </p>
+      <p>Let's run the tests again: this time we get no output!<br>
+      </p>
+      <br>
+      <table style="text-align: left; width: 100%; font-family: Monaco; outline-color: navy ! important; outline-style: dashed ! important; outline-width: 2px ! important;" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;"><br>
+3 run, 0 failed, 0 errors<br>
+            </span></small><small><span style="font-family: Monaco;"></span></small><small><br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br>
+      </p>
+      <p>To summarize steps 4, 5 and 6: taking inventory and writing
+your code
+may happen in sequence if the method is very simple, but most likely
+alternate with testing.&nbsp;&nbsp; When your tests reveal a problem,
+look at the resources that you have available to help you solve
+it.&nbsp;&nbsp; When all of your tests pass, wrote some more
+tests.&nbsp;&nbsp; Try and break your code!<br>
+      <br>
+      <table style="text-align: left; width: 100%; background-color: rgb(204, 255, 221);" border="0" cellpadding="3" cellspacing="2">
+        <tbody>
+          <tr>
+            <td>
+            <ol start="7">
+              <li> <a name="Clean_up"></a> Clean up the code </li>
+            </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+The final step in the design recipe is to take a look at your code and
+clean it up.&nbsp;&nbsp; Did you choose good names for the
+parameters?&nbsp; Are those comments useful?&nbsp; After every change
+to the code, test it again.&nbsp;&nbsp; That's the
+only way to be confident that you didn't accidentally mess up.</p>
+To find out more about minitest, read <a href="http://web.cecs.pdx.edu/~grace/doc/dialects/minitest/">the documentation</a><br>
+      <p><br>
+      </p>
+      </td>
+      <td valign="top"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 252px;">&nbsp;</td>
+      <td style="width: 60px;"><br>
+      </td>
+      <td style="width: 917px;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<br>
+
+<hr><font face="Helvetica, Geneva, Arial, SunSans-Regular,
+      sans-serif" size="-1">Most recently modified by Andrew P. Black at <csobj format="ShortTime" h="13" region="2" t="DateTime" w="31">1<font size="-1">5:43</font></csobj> on Tuesday<csobj format="LongDate" h="13" region="108" t="DateTime" w="110"> 22 October 2013</csobj></font><br>
+
+<hr width="100%">
+</body></html>
