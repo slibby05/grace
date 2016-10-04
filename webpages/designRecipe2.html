@@ -268,9 +268,11 @@ any code yet.&nbsp; You should see some output like this:<br>
           <tr>
             <td style="vertical-align: top; background-color: rgb(255, 255, 204);"><small><span style="font-family: Monaco;">
 <pre>
-1 run, 0 failed, 1 error
+3 run, 0 failed, 3 errors
 Errors:
-    celsiusToHarenheit: TypeError: argument 1 in assert (arg list 1), which corresponds to parameter s1, does not have type Object.
+    celsiusToFarenheit(-40): TypeError: argument 1 in assert (arg list 1), which corresponds to parameter s1, does not have type Object.
+    celsiusToFarenheit(0): TypeError: argument 1 in assert (arg list 1), which corresponds to parameter s1, does not have type Object.
+    celsiusToFarenheit(100): TypeError: argument 1 in assert (arg list 1), which corresponds to parameter s1, does not have type Object.
 </pre>
             </span></small></td>
           </tr>
@@ -329,7 +331,7 @@ completing the method definition:<br>
 <pre>
 dialect "minitest"
 
-methoddef celsiusToFahrenheit(cTemperature) {
+method celsiusToFahrenheit(cTemperature) {
     //Return the Fahrenheit equivalent of cTemperature, a number in degrees Celsius.
 
     //celsiusToFahrenheit(0) should be 32.0
